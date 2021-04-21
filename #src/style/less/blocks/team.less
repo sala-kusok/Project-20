@@ -1,0 +1,120 @@
+
+.team{
+
+  &__wrapper{
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__descriptions{
+    margin: 0 0 90px 0;
+  }
+
+  &__block{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__element{
+    .fun-width-interest(380px,1200px);
+
+    flex: 0 0 @interest;
+  }
+
+  &__name{
+    .fun-px-to-rem(14px);
+
+    font-weight: 600;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    color: @black;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 30px 0 15px 0;
+    margin: 0;
+  }
+
+  &__position{
+    .fun-px-to-rem(15px);
+
+    font-style: italic;
+    font-weight: 300;
+    font-size: @rem;
+    text-align: center;
+    color: #999999;
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .team{
+
+    &__wrapper{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &__descriptions{
+      margin: 0 0 45px 0;
+    }
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .team{
+
+    &__block{
+      justify-content: space-around;
+    }
+
+    &__element{
+      flex: 0 0 47%;
+      margin-bottom: 30px;
+
+      box-sizing: border-box;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    &__name{
+      border-left: 1px solid @primaryBlue;
+      border-right: 1px solid @primaryBlue;
+    }
+
+    &__position{
+      padding: 0 0 15px 0;
+      border-left: 1px solid @primaryBlue;
+      border-right: 1px solid @primaryBlue;
+      border-bottom: 1px solid @primaryBlue;
+    }
+
+  }
+}
+
+@media (max-width: 600px) {
+
+  .team{
+
+    &__element{
+      flex: 0 0 80%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  .team{
+
+    &__element{
+      flex: 0 0 98%;
+    }
+  }
+
+}

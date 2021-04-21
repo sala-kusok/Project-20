@@ -1,0 +1,103 @@
+@logoColor: @white;
+@iconColor: @white;
+@iconHoverColor: @primaryYellow;
+
+.header{
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  user-select: none;
+
+  &__wrapper{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__logo{
+    .fun-px-to-rem(30px);
+
+    flex: 0 0 auto;
+    margin: 0 auto 0 0;
+    font-weight: 700;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    color: @logoColor;
+  }
+
+  &__nav{
+    margin: 0 45px 0 0;
+  }
+
+  &__menu{
+
+  }
+
+  &__icons{
+    display: flex;
+    align-items: center;
+  }
+
+  &__icons-link{
+    flex: 0 0 auto;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+    &:first-child{
+      margin: 0 35px 0 0;
+
+      .header__icons-svg{
+        height: 15px;
+      }
+    }
+
+    &:hover,&:focus{
+
+      .header__icons-svg{
+        fill: @iconHoverColor;
+      }
+
+    }
+  }
+
+  &__icons-svg{
+    fill: @iconColor;
+    width: 18px;
+    height: 18px;
+    transition: 0.3s fill;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .header{
+
+    &__wrapper{
+      justify-content: space-between;
+    }
+
+    &__logo{
+      flex: 0 0 auto;
+      margin: 0;
+      order: 1;
+    }
+
+    &__nav{
+      flex: 0 0 100%;
+      margin: 2px 0 0 0;
+      order: 3;
+    }
+
+    &__icons{
+      flex: 0 0 auto;
+      order: 2;
+    }
+  }
+}

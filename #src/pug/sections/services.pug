@@ -1,0 +1,23 @@
+//- Описания
+- const servicesDescriptions = {'title': 'Amazing Services','subtitle': 'We work with'}
+
+//- Список наший услуг
+- const elementService = [{'title': 'Photography','text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.','svg': 'clock'},{'title': 'Web Design','text': 'Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.','svg': 'web'},{'title': 'Creativity','text': 'Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.','svg': 'creativ'},{'title': 'seo','text': 'Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.','svg': 'seo'},{'title': 'Css/Html','text': 'Lorem dolor sit amet, consectetur adipiscing elit, sed do tempor.','svg': 'home'},{'title': 'digital','text': 'Sit amet, consectetur adipiscing elit, sed do eiusmod tempor.','svg': 'digital'}]
+
+section.services
+  .services__wrapper.wrapper
+
+    //- вызываем мексин description, передаем ассоциативный массив
+    +description(servicesDescriptions)(class="services__descriptions")
+
+    .services__block
+
+      //- выводим в цикле elementService
+      each val in elementService
+        .services__element
+          .services__img
+            svg.services__svg
+              use(xlink:href="img/symbol/sprite.svg#" + val.svg)
+          .services__info
+            h3.services__info-title= val.title
+            p.services__info-text= val.text

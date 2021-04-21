@@ -1,0 +1,16 @@
+//- Описания
+- const aboutDescriptions = {'title': 'Story about us','subtitle': 'What we do','text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
+
+//- список блоков о нас
+- const elementAbout = [{'title': 'super team','img': 'about-img1'},{'title': 'super work','img': 'about-img2'},{'title':'super design','img': 'about-img3'}]
+
+section.about
+  .about__wrapper.wrapper
+
+    //- вызываем мексин description, передаем ассоциативный массив
+    +description(aboutDescriptions)(class="about__descriptions")
+
+    .about__block
+
+      //- вызываем мексин element, передаем ассоциативный массив и переключатель
+      +element(elementAbout,"about","about__element")

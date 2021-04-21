@@ -1,0 +1,125 @@
+
+.design{
+  background: url("../img/design-img-bg.jpg") center center/cover no-repeat;
+  position: relative;
+
+  @supports (-webkit-appearance:none){
+    background: url("../img/design-img-bg.webp") center center/cover no-repeat;
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,0.75);
+  }
+
+  &__wrapper{
+    padding-top: 100px;
+    position: relative;
+    text-align: center;
+    z-index: 3;
+  }
+
+  &__descriptions{
+    margin: 0 0 50px 0;
+  }
+
+  &__img{
+    display: inline-block;
+    margin-bottom: -95px;
+    transform: translateX(60px);
+  }
+  
+}
+
+@media (max-width: 980px) {
+
+  .design{
+    background: url("../img/design-img-bg-980.jpg") center center/cover no-repeat;
+    position: relative;
+
+    @supports (-webkit-appearance:none){
+      background: url("../img/design-img-bg-980.webp") center center/cover no-repeat;
+    }
+
+    &__wrapper{
+      padding-top: 50px;
+    }
+
+    &__descriptions{
+      margin: 0 0 40px 0;
+    }
+
+    &__img{
+      transform: translateX(40px);
+    }
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .design{
+
+    &__img{
+      transform: translateX(20px);
+    }
+
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .design{
+    background: url("../img/design-img-bg-650.jpg") center center/cover no-repeat;
+    position: relative;
+
+    @supports (-webkit-appearance:none){
+      background: url("../img/design-img-bg-650.webp") center center/cover no-repeat;
+    }
+
+    &__img{
+      margin-bottom: -61px;
+      width: 400px;
+    }
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .design{
+    background: url("../img/design-img-bg-480.jpg") center center/cover no-repeat;
+    position: relative;
+
+    @supports (-webkit-appearance:none){
+      background: url("../img/design-img-bg-480.webp") center center/cover no-repeat;
+    }
+
+    &__img{
+      margin-bottom: -49px;
+      transform: translateX(10px);
+      width: 320px;
+    }
+
+  }
+}
+
+@media (max-width: 350px) {
+
+  .design{
+
+    &__img{
+      margin-bottom: -45px;
+      width: 290px;
+    }
+
+  }
+}

@@ -1,0 +1,47 @@
+if check == 'img'
+  .reviews
+    .reviews__wrapper.wrapper
+      .reviews__carousel.owl-carousel.owl-theme
+        .reviews__element
+          .reviews__image
+            picture
+              source(srcset="img/img-user.webp" type="image/webp")
+              img(src="img/img-user.jpg" alt="Картинка" loading="lazy").reviews__img
+          .reviews__content
+            q.reviews__quote.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation.
+            .reviews__name Joshua Earle
+        .reviews__element
+          .reviews__image
+            picture
+              source(srcset="img/img-user.webp" type="image/webp")
+              img(src="img/img-user.jpg" alt="Картинка" loading="lazy").reviews__img
+          .reviews__content
+            q.reviews__quote.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation.
+            .reviews__name Joshua Earle
+  - var check = false
+else
+  .reviews.reviews--no-img
+    .reviews__wrapper.wrapper
+      .reviews__carousel.owl-carousel.owl-theme
+        .reviews__element
+          .reviews__image
+            svg.reviews__svg
+              use(xlink:href="img/symbol/sprite.svg#speech")
+          .reviews__content
+            q.reviews__quote.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation.
+            .reviews__name Jon Doe
+        .reviews__element
+          .reviews__image
+            svg.reviews__svg
+              use(xlink:href="img/symbol/sprite.svg#speech")
+          .reviews__content
+            q.reviews__quote.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation.
+            .reviews__name Jon Doe

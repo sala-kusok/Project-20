@@ -1,0 +1,18 @@
+//- Список меню
+- const itemMenu = ['About','service' ,'work' ,'blog','contact']
+
+header.header
+  .header__wrapper.wrapper
+    .header__logo MoGo
+    nav.header__nav
+
+      //- вызываем мексин menu, передаем ассоциативный массив
+      +menu(itemMenu,"header__menu")
+
+    .header__icons
+      a(href="#" aria-label="Карзина").header__icons-link
+        svg.header__icons-svg
+          use(xlink:href="img/symbol/sprite.svg#basket")
+      a(href="#" aria-label="Поиск").header__icons-link
+        svg.header__icons-svg
+          use(xlink:href="img/symbol/sprite.svg#search")

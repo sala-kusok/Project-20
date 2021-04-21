@@ -1,0 +1,345 @@
+@bgColorSlider1: fade(@primaryYellow,90%);
+@bgColorSlider2: fade(@primaryRed,90%);
+@bgColorSlider3: fade(#8981f3,90%);
+@bgColorSlider4: fade(#60c559,90%);
+@bgColorSlider5: fade(#f381f2,90%);
+@colorText: @white;
+
+.slider{
+  min-height: 100vh;
+  position: relative;
+  user-select: none;
+  background-color: @bgColorSlider2;
+
+  &__carousel{
+    min-height: inherit;
+
+    // Надстройка слайдера
+    .owl-stage-outer, .owl-stage, .owl-item{
+      min-height: inherit;
+    }
+
+  }
+
+  &__element{
+    width: 100%;
+    min-height: inherit;
+    box-sizing: border-box;
+    background: url("../img/first-page-img.jpg") center center/cover no-repeat;
+    position: relative;
+
+    @supports (-webkit-appearance:none){
+      background: url("../img/first-page-img.webp") center center/cover no-repeat;
+    }
+
+    &::before{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient( 0deg, @bgColorSlider1 0%, @bgColorSlider2 100%);
+      z-index: 1;
+    }
+
+    &--bg_blue{
+
+      &::before{
+        background: linear-gradient( 0deg, @bgColorSlider1 0%, @bgColorSlider3 100%);
+      }
+    }
+
+    &--bg_green{
+
+      &::before{
+        background: linear-gradient( 0deg, @bgColorSlider1 0%, @bgColorSlider4 100%);
+      }
+    }
+
+    &--bg_pink{
+
+      &::before{
+        background: linear-gradient( 0deg, @bgColorSlider1 0%, @bgColorSlider5 100%);
+      }
+    }
+
+  }
+
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: inherit;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+  }
+
+  &__subtitle{
+    .fun-px-to-rem(72px);
+
+    font-weight: 400;
+    font-size: @rem;
+    font-family: 'Kaushan Script', cursive;
+    line-height: 1.2;
+    color: @colorText;
+    margin: 0 0 35px 0;
+  }
+
+  &__title{
+    .fun-px-to-rem(150px);
+
+    font-weight: 700;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 0.95;
+    color: @colorText;
+    text-transform: uppercase;
+    margin: 0 0 50px 0;
+    padding: 0 0 60px 0;
+    position: relative;
+
+    &::after{
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: @colorText;
+    }
+  }
+
+
+  &__button{
+    .fun-px-to-rem(14px);
+
+    display: block;
+    padding: 9px 30px;
+    border: 4px solid @colorText;
+    font-weight: 700;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @colorText;
+    background-color: transparent;
+    transition: 0.4s background-color, 0.4s border, 0.4s color;
+    outline: none;
+
+    &:hover{
+      background-color: @bgColorSlider1;
+      border-color: @bgColorSlider2;
+      color: @bgColorSlider2;
+    }
+
+  }
+
+  &__nav{
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    z-index: 4;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  &__wrapper-nav{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link{
+    .fun-width-interest(280px, 1200px);
+    .fun-px-to-rem(18px);
+
+    display: block;
+    flex: 0 0 @interest;
+    font-weight: 400;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 26px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @colorText;
+    border-top: 4px solid @colorText;
+    padding: 22px 0;
+    box-sizing: border-box;
+    opacity: 0.7;
+    position: relative;
+    transition: 0.3s opacity;
+    outline: none;
+
+    span{
+      .fun-px-to-rem(24px);
+      font-weight: 700;
+      font-size: @rem;
+      line-height: 26px;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 0;
+      width: 25%;
+      height: 4px;
+      background-color: @primaryRed;
+      opacity: 0;
+      transition: 0.3s opacity;
+    }
+
+    &:hover{
+      opacity: 1;
+
+      &::before{
+        opacity: 1;
+      }
+    }
+
+    &--active{
+      opacity: 1;
+
+      &::before{
+        opacity: 1;
+      }
+    }
+
+  }
+
+  // Надстройка слайдера
+  .owl-dots{
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .owl-dot{
+      width: 18px;
+      height: 18px;
+      border: 2px solid @colorText;
+      border-radius: 50%;
+      margin: 0 12px 20px 0;
+      outline: none;
+
+    }
+
+    .active{
+      background-color: @colorText;
+    }
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .slider{
+
+    &__element{
+      background: url("../img/first-page-img-980.jpg") center center/cover no-repeat;
+
+      @supports (-webkit-appearance:none){
+        background: url("../img/first-page-img-980.webp") center center/cover no-repeat;
+      }
+    }
+
+    &__subtitle{
+      .fun-px-to-rem(36px);
+
+      font-size: @rem;
+    }
+
+    &__title{
+      .fun-px-to-rem(75px);
+
+      font-size: @rem;
+    }
+
+  }
+
+}
+
+@media (max-width: 980px) and (orientation:landscape) {
+
+  .slider{
+    min-height: 600px;
+
+    &__element {
+      padding: 80px 0 80px 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .slider{
+
+    &__element{
+      background: url("../img/first-page-img-768.jpg") center center/cover no-repeat;
+
+      @supports (-webkit-appearance:none){
+        background: url("../img/first-page-img-768.webp") center center/cover no-repeat;
+      }
+    }
+
+    &__subtitle{
+      margin-bottom: 25px;
+    }
+
+    &__title{
+      margin-bottom: 35px;
+      padding-bottom: 40px;
+    }
+
+    &__nav{
+      display: none;
+    }
+
+  }
+
+}
+
+@media (max-width: 768px) and (orientation:landscape) {
+
+  .slider{
+    min-height: 500px;
+
+    &__element {
+      padding: 120px 0 50px 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  .slider{
+
+    &__element{
+      background: url("../img/first-page-img-480.jpg") center center/cover no-repeat;
+
+      @supports (-webkit-appearance:none){
+        background: url("../img/first-page-img-480.webp") center center/cover no-repeat;
+      }
+    }
+
+    &__subtitle{
+      .fun-px-to-rem(24px);
+
+      font-size: @rem;
+    }
+
+    &__title{
+      .fun-px-to-rem(50px);
+
+      font-size: @rem;
+    }
+
+  }
+
+}

@@ -1,0 +1,60 @@
+
+.company{
+  background-color: #f8f8f8;
+
+  &__wrapper{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+  }
+
+  &__element{
+    width: 100%;
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      display: block;
+    }
+
+  }
+
+  // Настройки слайдера
+  .owl-dots{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .active{
+      background-color: @black;
+    }
+
+  }
+
+  .owl-dot{
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    border: 1px solid @black !important;
+    //border-radius: 50%;
+    margin: 0 8px;
+  }
+
+
+}
+
+@media (max-width: 980px) {
+
+  .company{
+
+    &__wrapper{
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+
+  }
+
+}

@@ -1,0 +1,393 @@
+
+.footer{
+  background-color: #f8f8f8;
+
+  &__wrapper{
+    padding-top: 65px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__description{
+    .fun-width-interest(465px,1200px);
+
+    flex: 0 0 @interest;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0 0 65px 0;
+  }
+
+  &__description-content{
+    margin: 0 0 45px 0;
+  }
+
+  &__description-title{
+    .fun-px-to-rem(45px);
+
+    font-weight: 700;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1;
+    color: #cccccc;
+    margin: 0 0 25px 0;
+  }
+
+  &__description-text{
+    .fun-px-to-rem(15px);
+
+    font-size: @rem;
+    line-height: 1.6;
+    color: #999999;
+  }
+
+  &__description-social{
+
+  }
+
+  &__description-number{
+    .fun-px-to-rem(14px);
+
+    font-weight: 400;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    color: @black;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #e5e5e5;
+
+    span{
+      .fun-px-to-rem(18px);
+
+      font-weight: 700;
+      font-size: @rem;
+    }
+  }
+
+  &__description-follow{
+    display: flex;
+    align-items: center;
+    margin: 14px 0 30px 0;
+  }
+
+  &__description-txt{
+    .fun-px-to-rem(15px);
+
+    font-style: italic;
+    font-weight: 300;
+    font-size: @rem;
+    line-height: 1.2;
+    color: #999;
+    margin: 0 20px 0 0;
+  }
+
+  &__description-link{
+    display: block;
+    text-decoration: none;
+    margin: 0 6px;
+    outline: none;
+
+    &:hover,&:focus{
+
+      .footer__description-svg{
+          fill: @primaryRed;
+      }
+    }
+  }
+
+  &__description-svg{
+    width: 16px;
+    height: 16px;
+    fill: @primaryBlue;
+    vertical-align: middle;
+    transition: 0.3s fill;
+  }
+
+  &__description-subscribe{
+    display: flex;
+
+    label{
+      &:extend(.visually-hidden);
+    }
+
+    input{
+      display: block;
+      background-color: @white;
+      width: 229px;
+      height: 38px;
+      border-top: 1px solid #e7e7e7;
+      border-bottom: 1px solid #e7e7e7;
+      border-left: 1px solid #e7e7e7;
+      border-right: none;
+      outline: none;
+      padding: 0 13px;
+      box-sizing: border-box;
+
+      .fun-px-to-rem(15px);
+
+      font-style: italic;
+      font-weight: 300;
+      font-size: @rem;
+      font-family: 'Roboto', sans-serif;
+      line-height: 36px;
+      color: #cccccc;
+      transition: 0.2s color;
+
+      &:focus{
+        color: @black;
+      }
+    }
+
+    button{
+      display: block;
+      appearance: none;
+      background-color: @primaryBlue;
+      height: 38px;
+      padding: 0 32px;
+      border: 0;
+      cursor: pointer;
+      transition: 0.3s background-color;
+
+      .fun-px-to-rem(14px);
+
+      font-weight: 700;
+      font-size: @rem;
+      line-height: 40px;
+      font-family: 'Montserrat', sans-serif;
+      color: @white;
+      text-transform: uppercase;
+      text-align: center;
+      outline: 0;
+
+      &:hover,&:focus{
+        background-color: @primaryRed;
+      }
+    }
+
+  }
+
+  &__blog{
+    .fun-width-interest(340px,1200px);
+
+    flex: 0 0 @interest;
+    margin: 0 0 65px 0;
+  }
+
+  &__blog-title{
+    .fun-px-to-rem(14px);
+
+    font-weight: 600;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    color: @black;
+    text-transform: uppercase;
+    margin: 0 0 35px 0;
+  }
+
+  &__blog-block{
+
+  }
+
+  &__blog-element{
+    display: flex;
+    align-items: center;
+    margin: 0 0 30px 0;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  &__blog-img{
+    .fun-width-interest(120px,340px);
+
+    flex: 0 0 @interest;
+    margin: 0 15px 0 0;
+
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__blog-content{
+    flex: 1 1 auto;
+  }
+
+  &__blog-subtitle{
+    .fun-px-to-rem(12px);
+
+    font-weight: 400;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    a{
+      text-decoration: none;
+      color: @black;
+      outline: none;
+
+      &:hover,&:focus{
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+  &__blog-date{
+    .fun-px-to-rem(13px);
+
+    font-style: italic;
+    font-weight: 300;
+    font-size: @rem;
+    line-height: 1.846;
+    color: #999999;
+  }
+
+
+  &__instagram{
+    .fun-width-interest(270px,1200px);
+
+    flex: 0 0 @interest;
+    margin: 0 0 65px 0;
+  }
+
+  &__instagram-title{
+    .fun-px-to-rem(14px);
+
+    font-weight: 600;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    color: @black;
+    text-transform: uppercase;
+    margin: 0 0 35px 0;
+  }
+
+  &__instagram-block{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0 10px 0;
+  }
+
+  &__instagram-link{
+    .fun-width-interest(88px,270px);
+
+    display: block;
+    flex: 0 0 @interest;
+    margin: 0 0 3px 0;
+
+    &:focus{
+      outline: 1px solid @primaryRed;
+    }
+
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__instagram-view{
+    .fun-px-to-rem(13px);
+
+    font-style: italic;
+    font-weight: 300;
+    font-size: @rem;
+    color: @black;
+    text-decoration: none;
+    outline: none;
+
+    &:hover,&:focus{
+      text-decoration: underline;
+    }
+  }
+
+  &__copyright{
+    flex: 0 0 100%;
+    padding: 20px 0 25px 0;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+
+    .fun-px-to-rem(14px);
+
+    font-weight: 500;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    color: @black;
+
+    span{
+      color: @primaryRed;
+    }
+  }
+  
+}
+
+@media (max-width: 980px) {
+
+  .footer{
+
+    &__description{
+      flex: 0 0 100%;
+      margin: 0 0 45px 0;
+    }
+
+    &__blog{
+      flex: 0 0 53%;
+      margin: 0 0 45px 0;
+    }
+
+    &__instagram{
+      flex: 0 0 44%;
+      margin: 0 0 45px 0;
+    }
+
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .footer{
+
+
+    &__blog{
+      flex: 0 0 100%;
+    }
+
+    &__instagram{
+      flex: 0 0 100%;
+    }
+
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  .footer{
+
+    &__description-txt{
+      margin-right: 10px;
+    }
+
+    &__description-link{
+      margin: 0 5px;
+    }
+
+    input{
+      width: 184px;
+      padding: 0 5px;
+    }
+
+    button{
+      padding: 0 10px;
+    }
+
+  }
+}

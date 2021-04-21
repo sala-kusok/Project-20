@@ -1,0 +1,92 @@
+//- menu
+mixin menu(array,classElement='',classModifier='',classActive='',item='')
+
+  if classElement
+    - var classElement = classElement + ' ';
+
+  if classModifier
+    - var classModifier = ' ' + classModifier;
+
+  if classActive
+    - var classActive = ' ' + classActive;
+
+  if item
+    - var item = item - 1;
+
+  ul(class= classElement + "menu" + classModifier)
+
+      each val, index in array
+        if item == index
+          li(class= "menu__item" + classActive)
+            a(href="#").menu__link= val
+        else
+          li(class= "menu__item")
+            a(href="#").menu__link= val
+
+//- description
+mixin description(val)
+
+  div(class=attributes.class + " descriptions")
+    p.descriptions__subtitle= val.subtitle
+    h2.descriptions__title= val.title
+    if val.text
+      p.descriptions__text= val.text
+
+//- element
+mixin element(array,blockTitle,classElement='',classModifier='')
+
+  if classElement
+    - var classElement = classElement + ' ';
+
+  if classModifier
+    - var classModifier = ' ' + classModifier;
+
+  case blockTitle
+    when "about"
+      each val in array
+        a(class= classElement + "element" + classModifier href="#" aria-label="Команда")
+          .element__img
+            picture
+              source(srcset="img/" + val.img + ".webp" type="image/webp")
+              img(src="img/" + val.img + ".jpg" alt="Картинка" loading="lazy")
+          .element__info
+            svg.element__svg
+              use(xlink:href="img/symbol/sprite.svg#users")
+            p.element__title= val.title
+    when "team"
+      each val in array
+        .team__element
+          div(class= classElement + "element" + classModifier)
+            .element__img
+              picture
+                source(srcset="img/" + val.img + ".webp" type="image/webp")
+                img(src="img/" + val.img + ".jpg" alt="Картинка" loading="lazy")
+            .element__info
+              a(href="#" aria-label="facebook").element__social
+                svg.element__svg
+                  use(xlink:href="img/symbol/sprite.svg#facebook")
+              a(href="#" aria-label="twitter").element__social
+                svg.element__svg
+                  use(xlink:href="img/symbol/sprite.svg#twitter")
+              a(href="#" aria-label="pinterest").element__social
+                svg.element__svg
+                  use(xlink:href="img/symbol/sprite.svg#pinterest")
+              a(href="#" aria-label="instagram").element__social
+                svg.element__svg
+                  use(xlink:href="img/symbol/sprite.svg#instagram")
+          h3.team__name= val.name
+          .team__position= val.position
+    when "work"
+      each val in array
+        a(class= classElement + "element" + classModifier href="#")
+          .element__img
+            picture
+              source(srcset="img/" + val.img + ".webp" type="image/webp")
+              img(src="img/" + val.img + ".jpg" alt="Картинка" loading="lazy")
+          .element__info
+            svg.element__svg
+              use(xlink:href="img/symbol/sprite.svg#picture")
+            h3.element__title= val.title
+            p.element__subtitle= val.subtitle
+    default
+      .error Вы указали несуществующий или неправильный "blockTitle"

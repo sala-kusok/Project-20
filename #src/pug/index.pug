@@ -1,0 +1,60 @@
+include mixins/mixins
+
+doctype html
+html(lang="zxx")
+
+  include sections/head
+
+  body
+    .container
+
+      //- 1 .header "Шапка сайта"
+      include sections/header
+
+      main
+
+        //- 2 .slider "Слайдер"
+        include sections/slider
+
+        //- 3 .about "О нас"
+        include sections/about
+
+        //- 4 .count "Показатели фирмы"
+        include sections/count
+
+        //- 5 .services "Наш сервис"
+        include sections/services
+
+        //- 6 .design "Уникальный дизайн"
+        include sections/design
+
+        //- 7 .we-do "Что ты делаем"
+        include sections/we-do
+
+        //- 8 .reviews "Отзывы клиентов"
+        include sections/reviews
+
+        //- 9 .team "Команда"
+        include sections/team
+
+        //- 10 .company "С нами работают"
+        include sections/company
+
+        //- 11 .work "Наши работы"
+        include sections/work
+          
+        //- 11 .reviews "Отзывы клиентов"
+        - var check = "img"
+        include sections/reviews
+
+        //- 12 .people-say "что говорят люди"
+        include sections/people-say
+
+        //- 13 .blog "Блог"
+        include sections/blog
+
+        //- 14 .map "Карта"
+        include sections/map
+
+      //- 15 .footer "Подвал"
+      include sections/footer

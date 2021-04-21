@@ -1,0 +1,276 @@
+@reviewsBgNoImg: #f8f8f8;
+@reviewsText: #999999;
+
+.reviews{
+  background-color: @white;
+  position: relative;
+
+  &__wrapper{
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__carousel{
+    padding: 0 100px 0 80px;
+    box-sizing: border-box;
+  }
+
+  &__element{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__image{
+    flex: 0 0 210px;
+    margin: 0 30px 0 0;
+  }
+
+  &__svg{
+    width: 60px;
+    height: 65px;
+    fill: @primaryBlue;
+  }
+
+  &__img{
+    display: block;
+    border-radius: 50%;
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+  }
+
+  &__content{
+    flex: 1 1 auto;
+  }
+
+  &__quote{
+    .fun-px-to-rem(24px);
+
+    font-style: italic;
+    font-weight: 300;
+    font-size: @rem;
+    line-height: 1.5;
+    color: @reviewsText;
+    display: block;
+    margin: 0 0 20px 0;
+  }
+
+
+  &__name{
+    .fun-px-to-rem(24px);
+
+    font-weight: 400;
+    font-size: @rem;
+    font-family: 'Kaushan Script', cursive;
+    line-height: 1.2;
+    color: @black;
+    padding: 0 0 0 70px;
+    position: relative;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      .line();
+    }
+  }
+
+  // Надстройки слайдера
+  .owl-nav{
+
+    .owl-prev,.owl-next{
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-135deg);
+      border-top: 3px solid #cccccc!important;
+      border-right: 3px solid #cccccc!important;
+      width: 15px;
+      height: 15px;
+      outline: none;
+      transition: 0.3s border;
+    }
+
+    .owl-prev:hover,.owl-next:hover,.owl-prev:focus,.owl-next:focus{
+      border-top: 3px solid @black!important;
+      border-right: 3px solid @black!important;
+    }
+
+    .owl-next{
+      left: auto;
+      right: 10px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+  }
+
+  &--no-img{
+    background-color: @reviewsBgNoImg;
+
+    .reviews__wrapper{
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .reviews__carousel{
+      padding: 0 110px 0 110px;
+    }
+
+    .reviews__element{
+      align-items: flex-start;
+    }
+
+    .reviews__image{
+      flex: 0 0 150px;
+      height: 150px;
+      margin: 0 50px 0 0;
+      border: 3px solid @primaryBlue;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .reviews__svg{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .reviews{
+
+    &__wrapper{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &__carousel{
+      padding: 0 50px 0 40px;
+    }
+
+    &__quote{
+      .fun-px-to-rem(22px);
+
+      font-size: @rem;
+    }
+
+    &--no-img{
+
+      .reviews__wrapper{
+        padding-top: 35px;
+        padding-bottom: 35px;
+      }
+
+      .reviews__carousel{
+        padding: 0 55px 0 55px;
+      }
+
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+
+  .reviews{
+
+    &__quote{
+      .fun-px-to-rem(20px);
+
+      font-size: @rem;
+    }
+
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .reviews{
+
+    &__carousel{
+      padding: 0 40px 0 40px;
+    }
+
+    &__element{
+      flex-wrap: wrap;
+    }
+
+    &__image{
+      flex: 0 0 150px;
+      margin: 0 auto 20px auto;
+    }
+
+    &__img{
+      width: 150px;
+      height: 150px;
+    }
+
+    &__content{
+      flex: 0 0 100%;
+    }
+
+    &--no-img{
+
+      .reviews__carousel{
+        padding: 0 40px 0 40px;
+      }
+
+      .reviews__image{
+        margin: 0 auto 20px auto;
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .reviews{
+
+    &__carousel{
+      padding: 0 20px 0 20px;
+    }
+
+    &__quote{
+      .fun-px-to-rem(18px);
+
+      font-size: @rem;
+    }
+
+    // Надстройки слайдера
+    .owl-nav{
+
+      .owl-prev,.owl-next{
+        left: 0;
+      }
+
+      .owl-next{
+        left: auto;
+        right: 0;
+      }
+
+    }
+
+    &--no-img{
+
+      .reviews__carousel{
+        padding: 0 20px 0 20px;
+      }
+
+    }
+
+  }
+
+}

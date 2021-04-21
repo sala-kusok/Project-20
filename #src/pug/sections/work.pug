@@ -1,0 +1,15 @@
+//- Описания
+- const workDescriptions = {'title': 'some of our work','subtitle': 'What we do','text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
+
+//- Список работ
+- const elementWork = [{'title': 'creatively designed','subtitle': 'Lorem ipsum dolor sit','img': 'work-img1'},{'title': 'creatively designed','subtitle': 'Lorem ipsum dolor sit','img': 'work-img2'},{'title': 'creatively designed','subtitle': 'Lorem ipsum dolor sit','img': 'work-img3'},{'title': 'creatively designed','subtitle': 'Lorem ipsum dolor sit','img': 'work-img4'},{'title': 'creatively designed','subtitle': 'Lorem ipsum dolor sit','img': 'work-img5'},{'title': 'creatively designed','subtitle': 'Lorem ipsum dolor sit','img': 'work-img6'},{'title': 'creatively designed','subtitle': 'Lorem ipsum dolor sit','img': 'work-img7'}]
+
+section.work
+
+  //- вызываем мексин description, передаем ассоциативный массив
+  +description(workDescriptions)(class="work__descriptions descriptions--work")
+
+  .work__block
+
+    //- вызываем мексин element, передаем ассоциативный массив и переключатель
+    +element(elementWork,"work","work__element","element--work")

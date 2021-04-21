@@ -1,0 +1,12 @@
+//- список картинок компаний
+- const elementCompany = [{'img': 'company-img1'},{'img': 'company-img2'},{'img': 'company-img3'},{'img': 'company-img4'},{'img': 'company-img5'},{'img': 'company-img6'}]
+
+.company
+  .company__wrapper.wrapper.owl-carousel.owl-theme
+
+    //- выводим в цикле elementCompany
+    each val in elementCompany
+      .company__element
+        picture
+          source(srcset="img/" + val.img + ".webp" type="image/webp")
+          img(src="img/" + val.img + ".jpg" alt="Картинка" loading="lazy")

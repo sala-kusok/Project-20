@@ -1,0 +1,61 @@
+//- иконки соцсетей
+- const iconSocial = [{'svg': 'facebook'},{'svg': 'twitter'},{'svg': 'instagram'},{'svg': 'pinterest'},{'svg': 'google-plus'},{'svg': 'youtube'},{'svg': 'dribbble'},{'svg': 'tumblr'}]
+
+//- статьи блога
+- const footerBlog = [{'subtitle': 'Lorem ipsum dolor sit amet, consectetur adipiscing','date': 'Jan 9, 2016','img': 'blog-min-img1'},{'subtitle': 'Consectetur adipiscing elit, sed do eiusmod tempor','date': 'Jan 9, 2016','img': 'blog-min-img2'},{'subtitle': 'sed do eiusmod tempor incididunt ut labore','date': 'Jan 9, 2016','img': 'blog-min-img3'}]
+
+//- инстаграм
+- const footerInstagram = [{'img': 'instagram-img1'},{'img': 'instagram-img2'},{'img': 'instagram-img3'},{'img': 'instagram-img4'},{'img': 'instagram-img5'},{'img': 'instagram-img6'},{'img': 'instagram-img7'},{'img': 'instagram-img8'},{'img': 'instagram-img9'}]
+
+footer.footer
+  .footer__wrapper.wrapper
+    .footer__description
+      .footer__description-content
+        .footer__description-title MoGo
+        .footer__description-text.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      .footer__description-social
+        .footer__description-number #[span 15k] followers
+        .footer__description-follow
+            .footer__description-txt Follow Us:
+
+            //- выводим в цикле iconSocial
+            each val in iconSocial
+              a(href="#" aria-label= val.svg).footer__description-link
+                svg.footer__description-svg
+                  use(xlink:href="img/symbol/sprite.svg#" + val.svg)
+
+        form(method="GET" action="index.html").footer__description-subscribe
+          label(for="email") Email
+          input( id="email" type="email" name="search" autocomplete="off" placeholder="Your Email...")
+          button Subscribe
+    .footer__blog
+      .footer__blog-title blogs
+      .footer__blog-block
+
+        //- выводим в цикле footerBlog
+        each val in footerBlog
+          .footer__blog-element
+            .footer__blog-img
+              picture
+                source(srcset="img/" + val.img + ".webp" type="image/webp")
+                img(src="img/" + val.img + ".jpg" alt="Картинка" loading="lazy")
+            .footer__blog-content
+              .footer__blog-subtitle
+                a(href="#")= val.subtitle
+              .footer__blog-date= val.date
+
+    .footer__instagram
+      .footer__instagram-title instagram
+      .footer__instagram-block
+
+        //- выводим в цикле footerInstagram
+        each val in footerInstagram
+          a(href="#").footer__instagram-link
+            picture
+              source(srcset="img/" + val.img + ".webp" type="image/webp")
+              img(src="img/" + val.img + ".jpg" alt="Картинка" loading="lazy")
+
+      a(href="#").footer__instagram-view View more photos
+    .footer__copyright &copy; 2016 MoGo free PSD template by #[span Laaqiq]

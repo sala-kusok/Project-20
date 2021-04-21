@@ -1,0 +1,12 @@
+//- Описания
+- const designDescriptions = {'title': 'Unique design','subtitle': 'For all devices'}
+
+section.design
+  .design__wrapper.wrapper
+
+    //- вызываем мексин description, передаем ассоциативный массив
+    +description(designDescriptions)(class="design__descriptions")
+
+    picture
+      source(srcset="img/unique-img.webp" type="image/webp")
+      img(src="img/unique-img.png" alt="Картинка" loading="lazy").design__img

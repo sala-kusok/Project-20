@@ -1,0 +1,78 @@
+@subtitleColorDescription: @black;
+@titleColorDescription: @black;
+@textColorDescription: #999999;
+@lineBgDescription: @primaryRed;
+
+.descriptions{
+
+  &__subtitle{
+    .fun-px-to-rem(24px);
+
+    font-weight: 400;
+    font-size: @rem;
+    font-family: 'Kaushan Script', cursive;
+    line-height: 1.2;
+    color: @subtitleColorDescription;
+    text-align: center;
+    margin: 0 0 15px 0;
+  }
+
+  &__title{
+    .fun-px-to-rem(30px);
+
+    font-weight: 700;
+    font-size: @rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    color: @titleColorDescription;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    margin: 0 0 40px 0;
+    padding: 0 0 35px 0;
+
+    &::after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      .line();
+    }
+  }
+
+  &__text{
+    .fun-px-to-rem(15px);
+
+    max-width: 980px;
+    font-size: @rem;
+    line-height: 1.6;
+    color: @textColorDescription;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  // Модификатор
+  &--work{
+
+    .descriptions__text{
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .descriptions{
+
+    &__title{
+      margin: 0 0 20px 0;
+      padding: 0 0 20px 0;
+    }
+
+  }
+
+}

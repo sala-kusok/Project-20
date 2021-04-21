@@ -1,0 +1,37 @@
+//- Описания
+- const blogDescriptions = {'title': 'Latest blog','subtitle': 'Our stories'}
+
+//- список блоков Блог
+- const elementBlog = [{'number': 15,'month': 'Jan','title': 'Lorem ipsum dolor sit amet','text': 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','views': 512,'messages': 17,'img': 'blog-img1'},{'number': 14,'month': 'Jan','title': 'sed do eiusmod tempor','text': 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','views': 992,'messages': 42,'img': 'blog-img2'},{'number': 12,'month': 'Jan','title': 'incididunt ut labore et dolore','text': 'Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','views': 1560,'messages': 98,'img': 'blog-img3'}]
+
+section.blog
+  .blog__wrapper.wrapper
+
+    //- вызываем мексин description, передаем ассоциативный массив
+    +description(blogDescriptions)(class="blog__descriptions")
+
+    .blog__block
+
+      //- выводим в цикле elementBlog
+      each val in elementBlog
+        .blog__element
+          a(href="#").blog__header
+            picture
+              source(srcset="img/" + val.img + ".webp" type="image/webp")
+              img(src="img/" + val.img + ".jpg" alt="Картинка" loading="lazy").blog__img
+            .blog__date
+              span.blog__date-first= val.number
+              span.blog__date-last= val.month
+          .blog__main
+            h3.blog__title
+              a(href="#")= val.title
+            .blog__text= val.text
+          .blog__footer
+            .blog__footer-views
+              svg.blog__footer-icon
+                use(xlink:href="img/symbol/sprite.svg#view")
+              span.blog__footer-number= val.views
+            .blog__footer-views-messages
+              svg.blog__footer-icon
+                use(xlink:href="img/symbol/sprite.svg#speech-bubble")
+              span.blog__footer-number= val.messages

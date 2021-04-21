@@ -1,0 +1,16 @@
+//- Описания
+- const teamDescriptions = {'title': 'Meet our team','subtitle': 'Who we are','text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
+
+//- Список команды
+- const elementTeam = [{'name': 'Matthew Dix','position': 'Graphic Design','img': 'team-img1'},{'name': 'Christopher Campbell','position': 'Branding/UX design','img': 'team-img2'},{'name': 'Michael Fertig','position': 'Developer','img': 'team-img3'}]
+
+section.team
+  .team__wrapper.wrapper
+
+    //- вызываем мексин description, передаем ассоциативный массив
+    +description(teamDescriptions)(class="team__descriptions")
+
+    .team__block
+
+      //- вызываем мексин element, передаем ассоциативный массив и переключатель
+      +element(elementTeam,"team","","element--team")

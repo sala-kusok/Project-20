@@ -1,0 +1,25 @@
+//- Описания
+- const peopleSayDescriptions = {'title': 'What people say','subtitle': 'Happy Clients'}
+
+//- Список отзывов
+- const elementPeopleSay = [{'name': 'Matthew Dix','position': 'Graphic Design','text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.','img': 'client-img1'},{'name': 'Nick Karvounis','position': 'Graphic Design','text': 'Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam','img': 'client-img2'},{'name': 'Jaelynn Castillo','position': 'Graphic Design','text': 'Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam','img': 'client-img3'},{'name': 'Mike Petrucci','position': 'Graphic Design','text': 'Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.','img': 'client-img4'},]
+
+section.people-say
+  .people-say__wrapper.wrapper
+
+    //- вызываем мексин description, передаем ассоциативный массив
+    +description(peopleSayDescriptions)(class="people-say__descriptions")
+
+    .people-say__block
+
+      //- выводим в цикле elementPeopleSay
+      each val in elementPeopleSay
+        .people-say__element
+          .people-say__image
+            picture
+              source(srcset="img/" + val.img + ".webp" type="image/webp")
+              img(src="img/" + val.img + ".jpg" alt="Картинка" loading="lazy")
+          .people-say__info
+            p.people-say__name= val.name
+            p.people-say__position= val.position
+            p.people-say__text= val.text
